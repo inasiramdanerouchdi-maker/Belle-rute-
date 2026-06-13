@@ -1,264 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Belle Route</title>
-
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<link rel="stylesheet" href="style.css" />
 
 <div class="app">
+  <!-- HOME -->
+  <div id="home" class="page active">
+    <h1 class="logo">BELLE <span>Route</span></h1>
 
-    <!-- INICIO -->
+    <input type="text" placeholder="Buscar destino..." class="search" />
 
-    <div id="home" class="page active">
-
-        <h1 class="logo">
-            BELLE <span>Route</span>
-        </h1>
-
-        <input
-        type="text"
-        placeholder="Buscar destino..."
-        class="search">
-
-        <div class="filters">
-
-            <button>Precio</button>
-            <button>Cercanía</button>
-            <button>Popularidad</button>
-
-        </div>
-
-        <div
-        class="destination-card"
-        onclick="showPage('maldives')">
-
-            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd">
-
-            <h2>MALDIVAS</h2>
-
-        </div>
-
-        <div
-        class="destination-card"
-        onclick="showPage('newyork')">
-
-            <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2">
-
-            <h2>NEW YORK</h2>
-
-        </div>
-
-        <div
-        class="destination-card"
-        onclick="showPage('florence')">
-
-            <img src="https://images.unsplash.com/photo-1543429776-2782fcf9605b">
-
-            <h2>FLORENCIA</h2>
-
-        </div>
-
+    <div class="filters">
+      <button>Precio</button>
+      <button>Cercanía</button>
+      <button>Popularidad</button>
     </div>
 
-    <!-- MALDIVAS -->
-
-    <div id="maldives" class="page">
-
-        <button class="back"
-        onclick="showPage('home')">
-            ← Volver
-        </button>
-
-        <h1>Maldivas</h1>
-
-        <img
-        class="hero"
-        src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd">
-
-        <p>
-            Un paraíso tropical con playas de arena blanca.
-        </p>
-
-        <h2>Hoteles</h2>
-
-        <div
-        class="hotel-card"
-        onclick="showPage('hotel1')">
-
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
-
-            <h3>Mar Salada Resort</h3>
-
-        </div>
-
-        <h2>Vuelos</h2>
-
-        <div class="flight-card">
-
-            Barcelona → Maldivas
-
-            <br>
-
-            08:30
-
-        </div>
-
-        <h2>Restaurantes</h2>
-
-        <div class="restaurant-card">
-
-            Blue Lagoon
-
-        </div>
-
+    <div class="destination-card" onclick="showPage('maldives')">
+      <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd" />
+      <h2>MALDIVAS</h2>
     </div>
 
-    <!-- HOTEL -->
-
-    <div id="hotel1" class="page">
-
-        <button class="back"
-        onclick="showPage('maldives')">
-            ← Volver
-        </button>
-
-        <h1>Mar Salada Resort</h1>
-
-        <img
-        class="hero"
-        src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
-
-        <p>
-            Resort de lujo frente al mar.
-        </p>
-
-        <div class="services">
-
-            <span>📶 Wifi</span>
-            <span>🏖 Terraza</span>
-            <span>🛗 Ascensor</span>
-
-        </div>
-
+    <div class="destination-card" onclick="showPage('newyork')">
+      <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2" />
+      <h2>NEW YORK</h2>
     </div>
 
-    <!-- NUEVA YORK -->
+    <div class="destination-card" onclick="showPage('florence')">
+      <img src="https://images.unsplash.com/photo-1543429776-2782fcf9605b" />
+      <h2>FLORENCIA</h2>
+    </div>
+  </div>
 
-    <div id="newyork" class="page">
+  <!-- DESTINOS -->
+  <div id="maldives" class="page"></div>
+  <div id="newyork" class="page"></div>
+  <div id="florence" class="page"></div>
 
-        <button class="back"
-        onclick="showPage('home')">
-            ← Volver
-        </button>
+  <!-- SECCIONES GENERALES -->
+  <div id="hotels" class="page">
+    <h1>Hoteles</h1>
 
-        <h1>New York</h1>
-
-        <img
-        class="hero"
-        src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2">
-
-        <p>
-            La ciudad que nunca duerme.
-        </p>
-
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" />
+      <h3>Mar Salada Resort</h3>
     </div>
 
-    <!-- FLORENCIA -->
-
-    <div id="florence" class="page">
-
-        <button class="back"
-        onclick="showPage('home')">
-            ← Volver
-        </button>
-
-        <h1>Florencia</h1>
-
-        <img
-        class="hero"
-        src="https://images.unsplash.com/photo-1543429776-2782fcf9605b">
-
-        <p>
-            Arte, cultura y gastronomía italiana.
-        </p>
-
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" />
+      <h3>Skyline Hotel</h3>
     </div>
 
-    <!-- TODOS LOS HOTELES -->
-
-    <div id="hotels" class="page">
-
-        <h1>Hoteles</h1>
-
-        <div class="hotel-card">
-
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
-
-            <h3>Mar Salada Resort</h3>
-
-        </div>
-
+    <div class="hotel-card">
+      <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c52a" />
+      <h3>Villa Toscana</h3>
     </div>
+  </div>
 
-    <!-- TODOS LOS VUELOS -->
+  <div id="flights" class="page">
+    <h1>Vuelos</h1>
 
-    <div id="flights" class="page">
+    <div class="flight-card">Barcelona → Maldivas — 08:30</div>
+    <div class="flight-card">Madrid → New York — 16:45</div>
+    <div class="flight-card">Barcelona → Florencia — 09:15</div>
+  </div>
 
-        <h1>Vuelos</h1>
+  <div id="restaurants" class="page">
+    <h1>Restaurantes</h1>
 
-        <div class="flight-card">
-            Barcelona → Maldivas
-        </div>
-
-        <div class="flight-card">
-            Madrid → Nueva York
-        </div>
-
-    </div>
-
-    <!-- TODOS LOS RESTAURANTES -->
-
-    <div id="restaurants" class="page">
-
-        <h1>Restaurantes</h1>
-
-        <div class="restaurant-card">
-            Blue Lagoon
-        </div>
-
-        <div class="restaurant-card">
-            Ocean Food
-        </div>
-
-    </div>
-
+    <div class="restaurant-card">Blue Lagoon (Maldivas)</div>
+    <div class="restaurant-card">Sky Diner (New York)</div>
+    <div class="restaurant-card">Trattoria Roma (Florencia)</div>
+  </div>
 </div>
 
 <nav>
-
-    <button onclick="showPage('home')">
-        Inicio
-    </button>
-
-    <button onclick="showPage('hotels')">
-        Hoteles
-    </button>
-
-    <button onclick="showPage('flights')">
-        Vuelos
-    </button>
-
-    <button onclick="showPage('restaurants')">
-        Restaurantes
-    </button>
-
+  <button onclick="showPage('home')">Inicio</button>
+  <button onclick="showPage('hotels')">Hoteles</button>
+  <button onclick="showPage('flights')">Vuelos</button>
+  <button onclick="showPage('restaurants')">Restaurantes</button>
 </nav>
 
 <script src="script.js"></script>
-
-</body>
-</html>
+.
