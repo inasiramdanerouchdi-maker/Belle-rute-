@@ -1,16 +1,111 @@
-function showPage(pageId){
+const data = {
+  maldives: {
+    name: "Maldivas",
+    hero: "https://images.unsplash.com/photo-1573843981267-be1999ff37cd",
 
-    const pages =
-    document.querySelectorAll(".page");
+    hotel: {
+      name: "Mar Salada Resort",
+      img: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      desc: "Resort de lujo sobre el mar cristalino."
+    },
 
-    pages.forEach(page => {
+    flights: [
+      { route: "Barcelona → Maldivas", time: "08:30" }
+    ],
 
-        page.classList.remove("active");
+    restaurant: {
+      name: "Blue Lagoon",
+      desc: "Comida tropical frente al mar."
+    }
+  },
 
-    });
+  newyork: {
+    name: "New York",
+    hero: "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2",
 
-    document
-    .getElementById(pageId)
-    .classList.add("active");
+    hotel: {
+      name: "Skyline Hotel",
+      img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+      desc: "Hotel moderno en Manhattan."
+    },
 
+    flights: [
+      { route: "Madrid → New York", time: "16:45" }
+    ],
+
+    restaurant: {
+      name: "Sky Diner",
+      desc: "Comida urbana con vistas a la ciudad."
+    }
+  },
+
+  florence: {
+    name: "Florencia",
+    hero: "https://content-viajes.nationalgeographic.com.es/medio/2025/09/22/adobestock-119593111_d8651c0d_250922124617_1280x854.webp$0",
+
+    hotel: {
+      name: "Villa Toscana",
+      img: "https://www.rodaonline.com/wp-content/uploads/Roda-Projects-VillaToscana-02.jpg$0",
+      desc: "Hotel con encanto italiano."
+    },
+
+    flights: [
+      { route: "Barcelona → Florencia", time: "09:15" }
+    ],
+
+    restaurant: {
+      name: "Trattoria Roma",
+      desc: "Auténtica cocina italiana."
+    }
+  }
+};
+
+function showPage(pageId) {
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(p => p.classList.remove("active"));
+
+  const page = document.getElementById(pageId);
+  page.classList.add("active");
+
+  if (data[pageId]) {
+    renderDestination(pageId);
+  }
+}
+
+function renderDestination(id) {
+  const d = data[id];
+
+  let flightsHTML = "";
+  d.flights.forEach(f => {
+    flightsHTML += `
+      <div class="flight-card">
+        ${f.route}<br><strong>${f.time}</strong>
+      </div>
+    `;
+  });
+
+  document.getElementById(id).innerHTML = `
+    <button class="back" onclick="showPage('home')">← Volver</button>
+
+    <h1>${d.name}</h1>
+
+    <img class="hero" src="${d.hero}">
+
+    <h2>🏨 Hotel recomendado</h2>
+    <div class="hotel-card">
+      <img src="${d.hotel.img}">
+      <h3>${d.hotel.name}</h3>
+      <p>${d.hotel.desc}</p>
+    </div>
+
+    <h2>✈️ Vuelos disponibles</h2>
+    ${flightsHTML}
+
+    <h2>🍝 Restaurante recomendado</h2>
+    <div class="restaurant-card">
+      <h3>${d.restaurant.name}</h3>
+      <p>${d.restaurant.desc}</p>
+    </div>
+  `;
 }
