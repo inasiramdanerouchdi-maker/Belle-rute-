@@ -1,82 +1,117 @@
+<!-- Enlazamos el archivo CSS para dar estilo a la página -->
 <link rel="stylesheet" href="style.css" />
 
+<!-- Contenedor principal de toda la aplicación -->
 <div class="app">
-  <!-- HOME -->
+
+  <!-- Página principal  -->
   <div id="home" class="page active">
+
+    <!-- nombre de la aplicación -->
     <h1 class="logo">BELLE <span>Route</span></h1>
 
+    <!-- Barra de búsqueda -->
     <input type="text" placeholder="Buscar destino..." class="search" />
 
+    <!-- Botones para filtrar los destinos -->
     <div class="filters">
       <button>Precio</button>
       <button>Cercanía</button>
       <button>Popularidad</button>
     </div>
 
+    <!-- Tarjeta de Maldivas -->
+    <!-- Al hacer clic se muestra la página de Maldivas -->
     <div class="destination-card" onclick="showPage('maldives')">
       <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd" />
       <h2>MALDIVAS</h2>
     </div>
 
+    <!-- Tarjeta de Nueva York -->
+    <!-- Al hacer clic se muestra la página de Nueva York -->
     <div class="destination-card" onclick="showPage('newyork')">
       <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2" />
       <h2>NEW YORK</h2>
     </div>
 
+    <!-- Tarjeta de Florencia -->
+    <!-- Al hacer clic se muestra la página de Florencia -->
     <div class="destination-card" onclick="showPage('florence')">
       <img src="https://images.unsplash.com/photo-1543429776-2782fcf9605b" />
       <h2>FLORENCIA</h2>
     </div>
   </div>
 
-  <!-- DESTINOS -->
+  <!-- Páginas de los destinos -->
   <div id="maldives" class="page"></div>
   <div id="newyork" class="page"></div>
   <div id="florence" class="page"></div>
 
-  <!-- SECCIONES GENERALES -->
+  <!-- Sección de hoteles -->
   <div id="hotels" class="page">
+
+    <!-- Título del apartado-->
     <h1>Hoteles</h1>
 
+    <!-- Hotel relacionado con Maldivas -->
     <div class="hotel-card">
       <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" />
       <h3>Mar Salada Resort</h3>
     </div>
 
+    <!-- Hotel relacionado con Nueva York -->
     <div class="hotel-card">
       <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" />
       <h3>Skyline Hotel</h3>
     </div>
 
+    <!-- Hotel relacionado con Florencia -->
     <div class="hotel-card">
       <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c52a" />
       <h3>Villa Toscana</h3>
     </div>
   </div>
 
+  <!-- Sección de vuelos -->
   <div id="flights" class="page">
+
+    <!-- Título de la sección -->
     <h1>Vuelos</h1>
 
+    <!-- Lista de vuelos -->
     <div class="flight-card">Barcelona → Maldivas — 08:30</div>
     <div class="flight-card">Madrid → New York — 16:45</div>
     <div class="flight-card">Barcelona → Florencia — 09:15</div>
   </div>
 
+  <!-- Sección de restaurantes -->
   <div id="restaurants" class="page">
+
+    <!-- Título de la sección -->
     <h1>Restaurantes</h1>
 
+    <!-- Restaurantes recomendados para cada destino -->
     <div class="restaurant-card">Blue Lagoon (Maldivas)</div>
     <div class="restaurant-card">Sky Diner (New York)</div>
     <div class="restaurant-card">Trattoria Roma (Florencia)</div>
   </div>
 </div>
 
+<!-- Menú de navegación -->
 <nav>
+
+  <!-- Botón para volver a la página principal -->
   <button onclick="showPage('home')">Inicio</button>
+
+  <!-- Botón para acceder a la sección de hoteles -->
   <button onclick="showPage('hotels')">Hoteles</button>
+
+  <!-- Botón para acceder a la sección de vuelos -->
   <button onclick="showPage('flights')">Vuelos</button>
+
+  <!-- Botón para acceder a la sección de restaurantes -->
   <button onclick="showPage('restaurants')">Restaurantes</button>
 </nav>
 
+<!-- Conectamos el archivo JavaScript que controla la interacción de la página -->
 <script src="script.js"></script>
-.
