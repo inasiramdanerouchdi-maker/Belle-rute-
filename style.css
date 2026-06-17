@@ -1,139 +1,167 @@
+/* Quitamos los márgenes y espacios  */
+/* Hacemos que el tamaño incluya bordes y rellenos */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* Estilos generales del cuerpo de la página */
 body{
-    background:#f6f7fb;
-    font-family:system-ui, sans-serif;
-    color:#222;
+    background:#f6f7fb; /* Color de fondo */
+    font-family:system-ui, sans-serif; /* Tipo de letra */
+    color:#222; /* Color del texto */
 }
 
+/* Todas las páginas estarán ocultas */
 .page{
     display:none;
-    padding:20px;
-    padding-bottom:90px;
+    padding:20px; /* Espacio interior */
+    padding-bottom:90px; /* Espacio inferior para que el menú no tape nada de informacion */
 }
 
+/* La página activa será la única visible */
 .page.active{
     display:block;
 }
 
-/* LOGO */
+/* ---------------- LOGO ---------------- */
+
+/* Estilo del título principal */
 .logo{
-    text-align:center;
-    font-size:40px;
-    font-weight:800;
-    color:#ff8fa3;
+    text-align:center; /* Centra el texto */
+    font-size:40px; /* Tamaño grande */
+    font-weight:800; /* Texto muy grueso */
+    color:#ff8fa3; /* Color rosa */
 }
 
+/* Cambiamos el color de la palabra */
 .logo span{
     color:#4dd0e1;
 }
 
-/* SEARCH */
+/* ---------------- BARRA DE BÚSQUEDA ---------------- */
+
+/* Estilo del buscador */
 .search{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:30px;
-    margin-top:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    width:100%; /* Ocupa todo el ancho disponible */
+    padding:14px; /* Espacio */
+    border:none; /* Sin borde */
+    border-radius:30px; /* Bordes redondeados */
+    margin-top:20px; /* Separación */
+    box-shadow:0 4px 15px rgba(0,0,0,0.08); /* Sombra */
 }
 
-/* FILTERS */
+/* ---------------- FILTROS ---------------- */
+
+/* Contenedor de los botones de filtros */
 .filters{
-    display:flex;
-    justify-content:space-around;
-    margin:15px 0;
-    background:white;
-    padding:10px;
-    border-radius:30px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    display:flex; /* Coloca los elementos en fila */
+    justify-content:space-around; /* Reparte el espacio entre ellos */
+    margin:15px 0; /* Margen arriba y abajo */
+    background:white; /* Fondo blanco */
+    padding:10px; /* Espacio interno */
+    border-radius:30px; /* Bordes redondeados */
+    box-shadow:0 4px 15px rgba(0,0,0,0.05); /* Sombra */
 }
 
+/* Estilo de los botones de filtros */
 .filters button{
-    border:none;
-    background:none;
-    font-weight:600;
+    border:none; /* Sin borde */
+    background:none; /* Sin fondo */
+    font-weight:600; /* Texto más grueso */
 }
 
-/* CARDS */
+/* ---------------- TARJETAS DE DESTINOS ---------------- */
+
+/* Diseño de las tarjetas de los destinos */
 .destination-card{
-    position:relative;
-    margin-bottom:20px;
-    border-radius:25px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    position:relative; /* Permite colocar texto encima de la imagen */
+    margin-bottom:20px; /* Separación inferior */
+    border-radius:25px; /* Bordes redondeados */
+    overflow:hidden; /* Oculta lo que sobresalga */
+    cursor:pointer; /* Cambia el cursor al pasar por encima */
+    box-shadow:0 6px 20px rgba(0,0,0,0.15); /* Sombra */
 }
 
+/* Imagen de cada destino */
 .destination-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
+    width:100%; /* Ocupa todo el ancho */
+    height:200px; /* Altura fija */
+    object-fit:cover; /* Ajusta la imagen sin deformarla */
 }
 
+/* Texto que aparece encima de la imagen */
 .destination-card h2{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color:white;
-    font-size:36px;
-    text-shadow:0 4px 10px rgba(0,0,0,0.6);
+    position:absolute; /* Lo coloca sobre la imagen */
+    top:50%; /* Centrado vertical */
+    left:50%; /* Centrado horizontal */
+    transform:translate(-50%,-50%); /* Ajuste para centrar exactamente */
+    color:white; /* Texto blanco */
+    font-size:36px; /* Tamaño grande */
+    text-shadow:0 4px 10px rgba(0,0,0,0.6); /* Sombra para mejorar la lectura */
 }
 
-/* CONTENT */
+/* ---------------- CONTENIDO ---------------- */
+
+/* Imagen principal de cada destino */
 .hero{
-    width:100%;
-    border-radius:25px;
-    margin:15px 0;
+    width:100%; /* Ocupa todo el ancho */
+    border-radius:25px; /* Bordes redondeados */
+    margin:15px 0; /* Separación arriba y abajo */
 }
 
+/* Estilo común para hoteles, vuelos y restaurantes */
 .hotel-card,
 .flight-card,
 .restaurant-card{
-    background:white;
-    padding:15px;
-    border-radius:20px;
-    margin-top:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    background:white; /* Fondo blanco */
+    padding:15px; /* Espacio interno */
+    border-radius:20px; /* Bordes redondeados */
+    margin-top:15px; /* Separación superior */
+    box-shadow:0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
 }
 
+/* Imagen de los hoteles */
 .hotel-card img{
-    width:100%;
-    border-radius:15px;
-    margin-bottom:10px;
+    width:100%; /* Ocupa todo el ancho */
+    border-radius:15px; /* Bordes redondeados */
+    margin-bottom:10px; /* Separación inferior */
 }
 
-/* BACK */
+/* ---------------- BOTÓN VOLVER ---------------- */
+
+/* Estilo del botón para regresar a otra página */
 .back{
-    background:#4dd0e1;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:15px;
-    margin-bottom:15px;
-    cursor:pointer;
-    font-weight:600;
+    background:#4dd0e1; /* Color azul */
+    color:white; /* Texto blanco */
+    border:none; /* Sin borde */
+    padding:10px 15px; /* Espacio interior */
+    border-radius:15px; /* Bordes redondeados */
+    margin-bottom:15px; /* Separación inferior */
+    cursor:pointer; /* Cursor de mano */
+    font-weight:600; /* Texto más grueso */
 }
 
-/* NAV */
+/* ---------------- MENÚ DE NAVEGACIÓN ---------------- */
+
+/* Barra de navegación inferior */
 nav{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    display:flex;
-    justify-content:space-around;
-    background:white;
-    padding:12px;
-    border-top:1px solid #eee;
+    position:fixed; /* Siempre visible */
+    bottom:0; /* Pegada abajo */
+    width:100%; /* Ocupa todo el ancho */
+    display:flex; /* Elementos en fila */
+    justify-content:space-around; /* Reparte los botones */
+    background:white; /* Fondo blanco */
+    padding:12px; /* Espacio interior */
+    border-top:1px solid #eee; /* Línea superior */
 }
 
+/* Estilo de los botones del menú */
 nav button{
-    border:none;
-    background:none;
-    font-weight:600;
+    border:none; /* Sin borde */
+    background:none; /* Sin fondo */
+    font-weight:600; /* Texto más grueso */
 }
+
+
